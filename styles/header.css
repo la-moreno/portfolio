@@ -1,0 +1,109 @@
+/* 
+** The Header Media Queries **
+** Tweak as per your needs **
+*/
+.site-header_start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.brand{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.brand-logo{
+  color: #F0F6F0;
+  padding: 1rem .5rem 1rem .5rem;
+  font-weight: 400;
+  font-size: x-large;
+}
+.brand-name a{
+  color: #F0F6F0;
+  padding: 0rem .5rem 0rem .5rem;
+  font-weight: 400;
+  font-size: large;
+}
+.brand-subtext a{
+  color: #F0F6F0;
+    padding: 0rem .5rem 0rem .5rem;
+    font-weight: 400;
+    font-size: large;
+  visibility: hidden;
+  position: absolute;
+}
+
+@media (max-width: 899px) {
+  .brand-logo{
+    visibility: hidden;
+    position: absolute;
+    font-size: 50px;
+    padding: 0 .5rem 0 .5rem;
+  }
+}
+
+@media (max-width: 899px) {
+  .brand-name a{
+    padding-top: 2rem;
+      font-size: 24px;
+    }
+}
+
+@media (max-width: 899px) {
+  .brand-subtext a{
+    position:relative;
+    visibility: visible;
+    font-size: 15.5px;
+  }
+}
+
+.site-header {
+  position: relative;
+}
+
+.site-header_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.site-header_middle{
+  margin-left:auto;
+}
+
+.nav_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 899px) {
+  .nav_wrapper {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.nav_toggle{
+  cursor: pointer;
+  color: #F0F6F0;
+  font-size: 36px;
+}
+
+@media (min-width: 900px){
+  .nav_toggle {
+    visibility: hidden;
+    }
+}
+
+.nav_item a{
+  display: block;
+  font-size: large;
+  font-weight: normal;
+  padding: .5rem 2rem .5rem 2rem;
+  color: #939498;
+}
+
+.nav_item a:hover {
+  color: #F0F6F0;
+}
