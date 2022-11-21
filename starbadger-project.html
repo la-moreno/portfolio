@@ -6,37 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="styles/reset.min.css" />
 		<link rel="stylesheet" href="styles/style.css" />
-		<link rel="stylesheet" href="styles/sidebar.css" />
 		<link rel="stylesheet" href="styles/header.css" />
+		<link rel="stylesheet" href="styles/wrapper.css" />
+		<link rel="stylesheet" href="styles/project-page.css" />
 	</head>
-
-	<body>
-		<!-- Sidebar Start -->
-		<div id="mySidenav" class="sidenav">
-			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-				>&times;</a
-			>
-			<a href="#">Home</a>
-			<a href="#">About</a>
-			<a href="#">Projects</a>
-			<a href="#">Contact</a>
-		</div>
-		<!-- Sidebar End -->
-
-		<!-- Header Start -->
-		<header class="site-header">
-			<div class="wrapper site-header_wrapper">
-				<div class="site-header_start">
-					<a class="brand-logo">&#9822;</a>
-					<ul class="brand">
-						<li class="brand-name"><a href="#">LA MORENO</a></li>
-						<li class="brand-subtext"><a href="#">Junior Programmer</a></li>
-					</ul>
+	<body class="hide-scroll">
+		<!-- Header -->
+		<header class="header example">
+			<div class="wrapper header_wrapper">
+				<a class="brand-logo"><i class="fa-solid fa-dice-d20"></i></a>
+				<div class="header_start">
+					<div class="brand-name"><a href="#">L.A. MORENO</a></div>
 				</div>
-				<div class="site-header_middle">
+				<div class="header_middle">
 					<nav class="nav">
 						<ul class="nav_wrapper">
-							<li class="nav_item"><a href="#">Home</a></li>
+							<li class="nav_item"><a href="index.html">Home</a></li>
 							<li class="nav_item">
 								<a href="#" style="color: #f0f6f0">Projects</a>
 							</li>
@@ -44,15 +29,11 @@
 						</ul>
 					</nav>
 				</div>
-				<div class="site-header_end">
-					<span class="nav_toggle" onclick="openNav()"> &#9776; </span>
-				</div>
 			</div>
 		</header>
-		<!-- Header End -->
 
 		<!-- Banner -->
-		<div class="content banner">
+		<div class="wrapper banner">
 			<div class="banner-subtitle">Project Highlight</div>
 			<div class="banner-title">Top-Down 2D Space Shooter</div>
 			<ul class="banner-tags">
@@ -69,7 +50,7 @@
 		</div>
 
 		<!-- Video -->
-		<div class="video-wrapper">
+		<div class="content-wrapper">
 			<div class="video-container">
 				<iframe
 					src="http://www.youtube.com/embed/n_dZNLr2cME?rel=0&hd=1"
@@ -80,6 +61,82 @@
 			</div>
 		</div>
 
-		<script src="js/header.js" controls></script>
+		<!-- Project Info -->
+		<div class="content-wrapper">
+			<div class="title">Overview</div>
+			<div class="flex-row pad-0-2">
+				<div id="project-summary">
+					A 2D space shooter in which the player controls a mining ship and uses
+					a mining laser to extract valuable ores from asteroids. The player
+					must fight off swarms of alien spaceships while securing as much
+					payload as they can.
+				</div>
+				<div class="flex-row">
+					<table id="project-info">
+						<tr>
+							<td>Duration:</td>
+							<td>Feb 2020 - June 2020</td>
+						</tr>
+						<tr>
+							<td>Team Size:</td>
+							<td>Solo</td>
+						</tr>
+						<tr>
+							<td>Roles:</td>
+							<td>Design • Code • Art • Sound</td>
+						</tr>
+						<tr>
+							<td>Engine:</td>
+							<td>Unity</td>
+						</tr>
+						<tr>
+							<td>Technologies:</td>
+							<td>C#</td>
+						</tr>
+						<tr>
+							<td>Platforms:</td>
+							<td>Windows</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div>
+				<div class="title">Contributions</div>
+				<div class="pad-half">
+					• Deployed resolution scaling methods to create a crisp pixel-art look
+					using both 2D and 3D Game Assets.
+				</div>
+				<div class="pad-half">
+					• Implemented AI steering behaviors to make enemies realistically
+					target the player.
+				</div>
+				<div class="pad-half">
+					• Implemented dynamic, stylized lighting to 3D objects using Unity
+					ShaderLab and HLSL.
+				</div>
+				<div class="pad-half">
+					• Implemented and optimized item and projectile spawns using object
+					pooling.
+				</div>
+				<div class="pad-half">
+					• Deployed Git Version Control System to track and manage changes to
+					project code.
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<ul>
+				<a href="" class="fa-brands fa-github"></a>
+				<a href="" class="fa-brands fa-twitter"></a>
+				<a href="" class="fa-brands fa-instagram"></a>
+				<a href="" class="fa-brands fa-youtube"></a>
+			</ul>
+		</footer>
+
+		<script
+			src="https://kit.fontawesome.com/c97ec5cecd.js"
+			crossorigin="anonymous"
+		></script>
 	</body>
 </html>

@@ -1,102 +1,83 @@
-/* 
-** The Header Media Queries **
-** Tweak as per your needs **
-*/
-.site-header_start {
+.header {
+  padding-top: 2rem;
+  position: relative;
+}
+
+@media (max-width: 899px) {
+  .header {
+    padding-top: 0rem;
+  }
+}
+
+
+.header_start {
+  padding: .5rem 0 .5rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.brand{
+
+.brand {
   display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.brand-logo{
+
+.brand-logo {
+  visibility: hidden;
   color: #F0F6F0;
-  padding: 1rem .5rem 1rem .5rem;
   font-weight: 400;
-  font-size: x-large;
 }
-.brand-name a{
+
+.brand-logo img {
+  height: 40px;
+}
+
+.brand-name a {
+  color: #F0F6F0;
+  padding: 0rem .5rem 0rem .5rem;
+  font-weight: 400;
+  width: 800px;
+}
+
+.brand-subtext a {
   color: #F0F6F0;
   padding: 0rem .5rem 0rem .5rem;
   font-weight: 400;
   font-size: large;
-}
-.brand-subtext a{
-  color: #F0F6F0;
-    padding: 0rem .5rem 0rem .5rem;
-    font-weight: 400;
-    font-size: large;
   visibility: hidden;
   position: absolute;
 }
 
 @media (max-width: 899px) {
-  .brand-logo{
-    visibility: hidden;
-    position: absolute;
-    font-size: 50px;
-    padding: 0 .5rem 0 .5rem;
-  }
-}
-
-@media (max-width: 899px) {
-  .brand-name a{
-    padding-top: 2rem;
-      font-size: 24px;
-    }
-}
-
-@media (max-width: 899px) {
-  .brand-subtext a{
-    position:relative;
+  .brand-logo {
     visibility: visible;
-    font-size: 15.5px;
+    padding: 2rem .5rem .5rem .5rem;
+  }
+
+  .brand-name a {
+    padding-top: 2rem;
+    font-size: 20px;
   }
 }
 
-.site-header {
-  position: relative;
+.header_middle {
+  margin-left: auto;
 }
 
-.site-header_wrapper {
+.nav_wrapper {
   display: flex;
   align-items: center;
 }
 
-.site-header_middle{
-  margin-left:auto;
-}
-
-.nav_wrapper {
-    display: flex;
-    align-items: center;
-}
-
 @media (max-width: 899px) {
-  .nav_wrapper {
-    position: absolute;
-    visibility: hidden;
-    opacity: 0;
+  .header_middle {
+    margin-left: 0;
   }
 }
 
-.nav_toggle{
-  cursor: pointer;
-  color: #F0F6F0;
-  font-size: 36px;
-}
-
-@media (min-width: 900px){
-  .nav_toggle {
-    visibility: hidden;
-    }
-}
-
-.nav_item a{
+.nav_item a {
   display: block;
   font-size: large;
   font-weight: normal;

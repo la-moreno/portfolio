@@ -1,30 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Top-down 2D Space Shooter</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="svg/lamoreno-logo-small.svg"
+			media="(prefers-color-scheme:dark)"
+		/>
+		<!-- ! add light mode favicon -->
+		<!-- <link
+			rel="icon"
+			type="image/x-icon"
+			href="svg/lamoreno-logo-small.svg"
+			media="(prefers-color-scheme:light)"
+		/> -->
+		<link rel="stylesheet" href="styles/reset.min.css" />
+		<link rel="stylesheet" href="styles/style.css" />
+		<link rel="stylesheet" href="styles/header.css" />
+		<link rel="stylesheet" href="styles/wrapper.css" />
+		<link rel="stylesheet" href="styles/home-page.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	</head>
+	<body class="hide-scroll">
+		<div class="fade-on-scroll"></div>
+		<div id="unity-container">
+			<canvas id="unity-canvas"></canvas>
+		</div>
+		<!-- Header -->
+		<header class="header example" id="header">
+			<div class="wrapper header_wrapper">
+				<a class="brand-logo"
+					><img src="svg/lamoreno-logo-small.svg" alt="logo"
+				/></a>
+				<div class="header_start">
+					<div class="hidden brand-name">
+						<a href="#">L.A. MORENO</a>
+					</div>
+				</div>
+				<div class="header_middle">
+					<nav class="nav">
+						<ul class="nav_wrapper">
+							<li class="hidden nav_item">
+								<a href="index.html" style="color: #f0f6f0">Home</a>
+							</li>
+							<li class="hidden nav_item">
+								<a href="starbadger-project.html">Projects</a>
+							</li>
+							<li class="hidden nav_item"><a href="#">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
 
-<head>
-  <title>Portfolio</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    html,
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Roboto", sans-serif
-    }
-  </style>
-</head>
+		<div class="hidden arrow-down">
+			<img src="svg/arrow-down-round.svg" alt="arrow" />
+		</div>
 
-<body style="background-color: #21252b;">
+		<!-- Banner -->
+		<div class="wrapper banner" id="home-banner">
+			<p class="hidden stagger banner-subtitle">Hi! I'm</p>
+			<h1 class="hidden stagger banner-title">Luke</h1>
+		</div>
 
+		<div style="height: 1000px"></div>
+		<div class=".fade-on-scroll">HELLO</div>
+		<div style="height: 2000px"></div>
 
-</body>
+		<footer>
+			<ul>
+				<a href="" class="fa-brands fa-github"></a>
+				<a href="" class="fa-brands fa-twitter"></a>
+				<a href="" class="fa-brands fa-instagram"></a>
+				<a href="" class="fa-brands fa-youtube"></a>
+			</ul>
+		</footer>
 
+		<script src="js/fade-on-scroll.js"></script>
+		<script
+			src="https://kit.fontawesome.com/c97ec5cecd.js"
+			crossorigin="anonymous"
+		></script>
+		<script src="unity/lowpolyplanet3.loader.js"></script>
+		<script>
+			if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+				// Mobile device style: fill the whole browser client area with the game canvas:
+				var meta = document.createElement("meta");
+				meta.name = "viewport";
+				meta.content =
+					"width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes";
+				document.getElementsByTagName("head")[0].appendChild(meta);
+			}
+
+			createUnityInstance(document.querySelector("#unity-canvas"), {
+				dataUrl: "unity/lowpolyplanet3.data",
+				frameworkUrl: "unity/lowpolyplanet3.framework.js",
+				codeUrl: "unity/lowpolyplanet3.wasm",
+				streamingAssetsUrl: "StreamingAssets",
+				companyName: "DefaultCompany",
+				productName: "PlanetWallpaper",
+				productVersion: "0.1",
+				// matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+				// devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+			});
+		</script>
+	</body>
 </html>

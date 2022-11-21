@@ -1,0 +1,30 @@
+#project-summary {
+    padding-right: 4rem;
+    font-size: 14px;
+    width: 50%;
+}
+
+#project-info {
+    width: 100%;
+}
+
+#project-info td {
+    padding: 0 2rem 1rem 0;
+    font-size: 14px;
+}
+
+@media (max-width: 899px) {
+    .flex-row {
+        flex-direction: column;
+    }
+
+    #project-summary {
+        padding: 0 0 2rem 0;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    #project-info {
+        padding: 0 0 2rem 0;
+    }
+}

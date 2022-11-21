@@ -1,0 +1,54 @@
+#unity-container {
+    position: fixed;
+    display: block;
+    z-index: -5;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#unity-container canvas {
+    width: 100%;
+    height: 100%;
+    background-color: #222323;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#home-banner {
+    text-align: center !important;
+    height: 60vh !important;
+}
+
+.fade-on-scroll {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #222323;
+    opacity: 0;
+    z-index: -4;
+    cursor: pointer;
+}
+
+@media (max-width: 899px) {
+    #home-banner {
+        height: 30vh !important;
+    }
+}
+
+.arrow-down {
+    position: absolute;
+    top: 88%;
+    left: calc(50% - 25px);
+}
+
+.arrow-down img {
+    width: 50px;
+}
