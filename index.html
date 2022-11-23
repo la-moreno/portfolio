@@ -27,7 +27,7 @@
 	<body class="hide-scroll">
 		<div class="fade-on-scroll"></div>
 		<div id="unity-container">
-			<canvas id="unity-canvas"></canvas>
+			<iframe src="godot/LowPoly Planet.html"></iframe>
 		</div>
 		<!-- Header -->
 		<header class="header example" id="header">
@@ -84,28 +84,5 @@
 			src="https://kit.fontawesome.com/c97ec5cecd.js"
 			crossorigin="anonymous"
 		></script>
-		<script src="unity/lowpolyplanet3.loader.js"></script>
-		<script>
-			if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-				// Mobile device style: fill the whole browser client area with the game canvas:
-				var meta = document.createElement("meta");
-				meta.name = "viewport";
-				meta.content =
-					"width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes";
-				document.getElementsByTagName("head")[0].appendChild(meta);
-			}
-
-			createUnityInstance(document.querySelector("#unity-canvas"), {
-				dataUrl: "unity/lowpolyplanet3.data",
-				frameworkUrl: "unity/lowpolyplanet3.framework.js",
-				codeUrl: "unity/lowpolyplanet3.wasm",
-				streamingAssetsUrl: "StreamingAssets",
-				companyName: "DefaultCompany",
-				productName: "PlanetWallpaper",
-				productVersion: "0.1",
-				// matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-				// devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-			});
-		</script>
 	</body>
 </html>

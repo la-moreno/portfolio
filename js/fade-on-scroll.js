@@ -41,7 +41,7 @@ $("#unity-container").ready(function () {
         fadeOutInterval = setInterval(function () {
             FadeOut(fade_in_speed, $(".fade-on-scroll"));
         }, update_interval);
-    }, 4500);
+    }, 500);
 
 });
 
