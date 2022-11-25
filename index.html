@@ -7,7 +7,7 @@
 		<link
 			rel="icon"
 			type="image/x-icon"
-			href="svg/lamoreno-logo-small.svg"
+			href="svg/la-logo.svg"
 			media="(prefers-color-scheme:dark)"
 		/>
 		<!-- ! add light mode favicon -->
@@ -25,46 +25,42 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	</head>
 	<body class="hide-scroll">
-		<div class="fade-on-scroll"></div>
-		<div id="unity-container">
-			<iframe src="godot/LowPoly Planet.html"></iframe>
-		</div>
 		<!-- Header -->
 		<header class="header example" id="header">
 			<div class="wrapper header_wrapper">
-				<a class="brand-logo"
-					><img src="svg/lamoreno-logo-small.svg" alt="logo"
-				/></a>
+				<a class="brand-logo"><img src="svg/la-logo.svg" alt="logo" /></a>
 				<div class="header_start">
-					<div class="hidden brand-name">
+					<div class="brand-name">
 						<a href="#">L.A. MORENO</a>
 					</div>
 				</div>
 				<div class="header_middle">
 					<nav class="nav">
 						<ul class="nav_wrapper">
-							<li class="hidden nav_item">
+							<li class="nav_item nav_item_active">
 								<a href="index.html" style="color: #f0f6f0">Home</a>
 							</li>
-							<li class="hidden nav_item">
+							<li class="nav_item">
 								<a href="starbadger-project.html">Projects</a>
 							</li>
-							<li class="hidden nav_item"><a href="#">Contact</a></li>
+							<li class="nav_item"><a href="#">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
 			</div>
 		</header>
-
+		<div id="godot-container">
+			<div class="banner flex-col" id="home-banner">
+				<p class="hidden stagger banner-subtitle">Hi! I'm</p>
+				<h1 class="hidden stagger banner-title">Lucas</h1>
+			</div>
+			<iframe class="banner" src="godot/lowpoly_planet.html"></iframe>
+		</div>
 		<div class="hidden arrow-down">
 			<img src="svg/arrow-down-round.svg" alt="arrow" />
 		</div>
 
 		<!-- Banner -->
-		<div class="wrapper banner" id="home-banner">
-			<p class="hidden stagger banner-subtitle">Hi! I'm</p>
-			<h1 class="hidden stagger banner-title">Luke</h1>
-		</div>
 
 		<div style="height: 1000px"></div>
 		<div class=".fade-on-scroll">HELLO</div>

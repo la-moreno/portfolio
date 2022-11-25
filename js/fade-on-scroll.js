@@ -32,7 +32,7 @@ function FadeOut(amount, element) {
     }
 }
 
-$("#unity-container").ready(function () {
+$("#godot-container").ready(function () {
     $(".fade-on-scroll").css({ "opacity": 1 });
     isLoaded = false;
 
@@ -41,7 +41,7 @@ $("#unity-container").ready(function () {
         fadeOutInterval = setInterval(function () {
             FadeOut(fade_in_speed, $(".fade-on-scroll"));
         }, update_interval);
-    }, 500);
+    }, 200);
 
 });
 

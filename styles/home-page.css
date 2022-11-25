@@ -1,24 +1,12 @@
-#unity-container {
-    position: fixed;
+#godot-container {
+    position: relative;
     display: block;
-    z-index: -5;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#unity-container canvas {
-    width: 100%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #home-banner {
     text-align: center !important;
-    height: 60vh !important;
+    position: absolute;
+    z-index: 5;
 }
 
 .fade-on-scroll {

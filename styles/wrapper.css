@@ -1,7 +1,6 @@
 .wrapper {
-    max-width: 85%;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 95%;
+    margin: auto;
 }
 
 .header_wrapper {
@@ -12,6 +11,7 @@
 @media (max-width: 899px) {
     .header_wrapper {
         flex-direction: column;
+        padding-bottom: .5rem;
     }
 }
 

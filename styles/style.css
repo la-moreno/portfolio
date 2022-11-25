@@ -16,9 +16,10 @@ body {
 body {
   margin: 0;
   font-family: "Quicksand", sans-serif;
+  -webkit-font-smoothing: antialiased;
   letter-spacing: .08rem;
   color: #f0f6f0;
-  background-color: #222323;
+  background-color: #3e415f;
 }
 
 .hide-scroll {
@@ -87,10 +88,8 @@ footer ul a {
 }
 
 .banner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 60vh;
+  width: 100vw;
+  height: 70vh;
 }
 
 .banner-subtitle {
@@ -185,6 +184,12 @@ iframe {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hidden {
