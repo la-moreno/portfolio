@@ -57,7 +57,7 @@
 @media (max-width: 899px) {
   .brand-logo {
     visibility: visible;
-    padding: 2rem .5rem .5rem .5rem;
+    padding: 1rem .5rem .5rem .5rem;
   }
 
   .brand-logo img {
