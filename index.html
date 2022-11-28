@@ -7,16 +7,16 @@
 		<link
 			rel="icon"
 			type="image/x-icon"
-			href="svg/la-logo.svg"
+			href="svg/la-logo-white.svg"
 			media="(prefers-color-scheme:dark)"
 		/>
 		<!-- ! add light mode favicon -->
-		<!-- <link
+		<link
 			rel="icon"
 			type="image/x-icon"
-			href="svg/lamoreno-logo-small.svg"
+			href="svg/la-logo-black.svg"
 			media="(prefers-color-scheme:light)"
-		/> -->
+		/>
 		<link rel="stylesheet" href="styles/reset.min.css" />
 		<link rel="stylesheet" href="styles/style.css" />
 		<link rel="stylesheet" href="styles/header.css" />
@@ -26,9 +26,9 @@
 	</head>
 	<body class="hide-scroll">
 		<!-- Header -->
-		<header class="header example" id="header">
+		<header class="sticky header example" id="header">
 			<div class="wrapper header_wrapper">
-				<a class="brand-logo"><img src="svg/la-logo.svg" alt="logo" /></a>
+				<a class="brand-logo"><img src="svg/la-logo-white.svg" alt="logo" /></a>
 				<div class="header_start">
 					<div class="brand-name">
 						<a href="#">L.A. MORENO</a>
@@ -65,9 +65,18 @@
 		</div>
 		<!-- end -->
 
-		<div style="height: 1000px"></div>
-		<div class=".fade-on-scroll">HELLO</div>
-		<div style="height: 2000px"></div>
+		<div
+			style="
+				position: relative;
+				z-index: 1000;
+				height: 1000px;
+				box-shadow: 0px -3px 15px rgba(0, 0, 0, 0.5);
+			"
+		></div>
+		<div class=".fade-on-scroll" style="position: relative; z-index: 2000">
+			HELLO
+		</div>
+		<div style="height: 2000px; position: relative"></div>
 
 		<footer>
 			<ul>

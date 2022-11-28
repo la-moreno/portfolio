@@ -22,6 +22,18 @@ body {
   background-color: #3e415f;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+@media (max-width: 899px) {
+  .sticky {
+    position: relative;
+  }
+}
+
 .hide-scroll {
   /* -ms-overflow-style: none; */
   /* for Internet Explorer, Edge */
