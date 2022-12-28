@@ -1,0 +1,56 @@
+.banner {
+    height: 70vh;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner-subtitle {
+    font-family: "Oxygen", sans-serif;
+    font-weight: normal;
+    font-size: 24px;
+    opacity: 60%;
+}
+
+.banner-title {
+    font-family: "Oxygen", sans-serif;
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 3rem;
+    padding: 1rem 0 2rem 0;
+}
+
+.banner-tags {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+@media (max-width: 768px) {
+
+    .banner-subtitle,
+    .banner-title,
+    .banner-tags {
+        max-width: 500px;
+    }
+
+    .banner-title {
+        font-size: 48px;
+    }
+}
+
+.banner-tagitem {
+    display: inline-flex;
+    justify-content: center;
+    padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+}
+
+.banner-tagitem div {
+    padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+    text-align: center;
+    min-width: 36px;
+    color: #f0f6f0;
+    border: 2px solid #f0f6f0;
+    border-radius: 20px;
+}

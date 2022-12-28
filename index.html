@@ -1,96 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>Hi! I'm Lucas</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link
-			rel="icon"
-			type="image/x-icon"
-			href="svg/la-logo-white.svg"
-			media="(prefers-color-scheme:dark)"
-		/>
-		<!-- ! add light mode favicon -->
-		<link
-			rel="icon"
-			type="image/x-icon"
-			href="svg/la-logo-black.svg"
-			media="(prefers-color-scheme:light)"
-		/>
-		<link rel="stylesheet" href="styles/reset.min.css" />
-		<link rel="stylesheet" href="styles/style.css" />
-		<link rel="stylesheet" href="styles/header.css" />
-		<link rel="stylesheet" href="styles/wrapper.css" />
-		<link rel="stylesheet" href="styles/home-page.css" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	</head>
-	<body class="hide-scroll">
-		<!-- Header -->
-		<header class="sticky header example" id="header">
-			<div class="wrapper header_wrapper">
-				<a class="brand-logo"><img src="svg/la-logo-white.svg" alt="logo" /></a>
-				<div class="header_start">
-					<div class="brand-name">
-						<a href="#">L.A. MORENO</a>
-					</div>
-				</div>
-				<div class="header_middle">
-					<nav class="nav">
-						<ul class="nav_wrapper">
-							<li class="nav_item nav_item_active">
-								<a href="index.html" style="color: #f0f6f0">Home</a>
-							</li>
-							<li class="nav_item">
-								<a href="starbadger-project.html">Projects</a>
-							</li>
-							<li class="nav_item"><a href="#">Contact</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</header>
-		<!-- end -->
 
-		<!-- Banner -->
-		<div id="home-banner">
-			<div class="fill flex-col" id="home-greeting">
-				<p class="hidden stagger banner-subtitle">Hi! I'm</p>
-				<h1 class="hidden stagger banner-title">Lucas</h1>
-			</div>
-			<div class="fill" id="godot-overlay"></div>
-			<iframe src="godot/lowpoly_planet.html"></iframe>
+<head>
+	<meta charset="UTF-8" />
+	<title>Hi! I'm Lucas</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" type="image/x-icon" href="svg/la-logo-white.svg" media="(prefers-color-scheme:dark)" />
+	<link rel="icon" type="image/x-icon" href="svg/la-logo-black.svg" media="(prefers-color-scheme:light)" />
+	<link rel="stylesheet" href="styles/reset.min.css" />
+	<link rel="stylesheet" href="styles/style.css" />
+	<link rel="stylesheet" href="styles/navbar.css" />
+	<link rel="stylesheet" href="styles/wrapper.css" />
+	<link rel="stylesheet" href="styles/home-page.css" />
+	<link rel="stylesheet" href="styles/banner.css" />
+	<link rel="stylesheet" href="prism/prism.css">
+
+	<script src="prism/prism.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body class="hide-scroll">
+	<!-- Navbar -->
+	<div class="navbar">
+		<li><a><img src="svg/la-logo-white.svg" alt="logo" /></a></li>
+		<li><a href="#">L.A. MORENO</a></li>
+		<ul>
+			<li><a href="#">Contact</a></li>
+			<li><a href="starbadger-project.html">Projects</a></li>
+			<li class="active"><a href="index.html">Home</a></li>
+		</ul>
+	</div>
+	<!-- end -->
+
+	<!-- Banner -->
+	<div class="home-banner">
+		<div class="home-greeting">
+			<a class="hidden stagger" href=""><img style="
+					width: 5rem; 
+					color: #f0f6f0" id="banner-logo" src="svg/la-logo-white.svg" alt="logo" /></a>
+			<h1 class="hidden stagger">Lucas A. Moreno</h1>
+			<h2 class="hidden stagger">Gameplay Programmer</h2>
+			<img class="hidden stagger" id="arrow-down" src="svg/arrow-down-round.svg" alt="arrow" />
 		</div>
-		<div class="hidden arrow-down">
-			<img src="svg/arrow-down-round.svg" alt="arrow" />
-		</div>
-		<!-- end -->
+		<iframe width="1280" height="720" src="godot/lowpoly_planet.html"></iframe>
+	</div>
+	<!-- end -->
 
-		<div
-			style="
-				position: relative;
-				z-index: 1000;
-				height: 1000px;
-				box-shadow: 0px -3px 15px rgba(0, 0, 0, 0.5);
-			"
-		></div>
-		<div class=".fade-on-scroll" style="position: relative; z-index: 2000">
-			HELLO
-		</div>
-		<div style="height: 2000px; position: relative"></div>
+	<h6 style="height: 10vh; 
+    background-color: inherit;"></h6>
 
-		<footer>
-			<ul>
-				<a href="" class="fa-brands fa-github"></a>
-				<a href="" class="fa-brands fa-twitter"></a>
-				<a href="" class="fa-brands fa-instagram"></a>
-				<a href="" class="fa-brands fa-youtube"></a>
-			</ul>
-		</footer>
 
-		<script src="js/fade-on-scroll.js"></script>
-		<script
-			src="https://kit.fontawesome.com/c97ec5cecd.js"
-			crossorigin="anonymous"
-		></script>
-	</body>
+	<footer>
+		<ul>
+			<a href="" class=" fa-brands fa-github"></a>
+			<a href="" class="fa-brands fa-twitter"></a>
+			<a href="" class="fa-brands fa-instagram"></a>
+			<a href="" class="fa-brands fa-youtube"></a>
+		</ul>
+	</footer>
+
+	<script src="js/fade-on-scroll.js"></script>
+	<script src="https://kit.fontawesome.com/c97ec5cecd.js" crossorigin="anonymous"></script>
+</body>
+
 </html>

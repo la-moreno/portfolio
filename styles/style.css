@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap');
+
 
 html,
 body {
@@ -9,7 +11,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   line-height: 1.5rem;
 }
 
@@ -20,26 +22,6 @@ body {
   letter-spacing: .08rem;
   color: #f0f6f0;
   background-color: #3e415f;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-@media (max-width: 899px) {
-  .sticky {
-    position: relative;
-  }
-}
-
-.hide-scroll {
-  /* -ms-overflow-style: none; */
-  /* for Internet Explorer, Edge */
-  /* scrollbar-width: none; */
-  /* for Firefox */
-  /* overflow-y: scroll; */
 }
 
 .hide-scroll::-webkit-scrollbar {
@@ -84,6 +66,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+footer {
+  background-color: inherit;
+}
+
 footer ul {
   height: 120px;
   display: flex;
@@ -97,59 +83,6 @@ footer ul {
 footer ul a {
   font-size: 26px;
   padding: 0 1rem 0 1rem;
-}
-
-.banner {
-  width: 100vw;
-  height: 70vh;
-}
-
-.banner-subtitle {
-  font-family: "Oxygen", sans-serif;
-  font-weight: normal;
-  font-size: 24px;
-  opacity: 60%;
-}
-
-.banner-title {
-  font-family: "Oxygen", sans-serif;
-  font-weight: bold;
-  font-size: 56px;
-  line-height: 3rem;
-  padding: 1rem 0 2rem 0;
-}
-
-.banner-tags {
-  display: inline-flex;
-  flex-direction: row;
-}
-
-@media (max-width: 899px) {
-
-  .banner-subtitle,
-  .banner-title,
-  .banner-tags {
-    max-width: 500px;
-  }
-
-  .banner-title {
-    font-size: 48px;
-  }
-}
-
-.banner-tagitem {
-  display: inline-flex;
-  justify-content: center;
-  padding: 0.2rem 0.4rem 0.2rem 0.4rem;
-}
-
-.banner-tagitem div {
-  padding: 0.2rem 0.4rem 0.2rem 0.4rem;
-  text-align: center;
-  min-width: 36px;
-  color: #f0f6f0;
-  border: 2px solid #f0f6f0;
-  border-radius: 20px;
 }
 
 .video-container {
