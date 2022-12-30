@@ -65,11 +65,11 @@
 .skills-section .description {
     flex: 3;
     box-sizing: border-box;
-    padding-right: 12vw;
+    padding-right: 4vw;
     height: 100%;
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 64%;
 }
 
 .skills-section p {
@@ -89,6 +89,7 @@
     overflow: scroll;
     height: 100%;
     line-height: 1px !important;
+    border: 4px solid #222323;
 }
 
 .skills-section pre code {

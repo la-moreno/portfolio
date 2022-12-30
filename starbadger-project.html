@@ -124,90 +124,116 @@
 	</div>
 
 	<!-- Skills Section -->
-	<h2 class="subheading">Shaders</h2>
+	<h2 class="subheading">Mining Asteroids</h2>
 	<section class="skills-section">
 		<div class="description">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-				dolore magna
-				aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis
-				aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-				Excepteur sint
-				occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<h6>html</h6>
+			<p>To create the mining effect I used Unity's line renderer for the laser, and object pooling to spawn dust
+				and flame
+				particle effects. Below is the function which controls the rendering of the laser, the spawning of
+				particles, and
+				appling damage to the asteroid.</p>
+			<h6>C#</h6>
 			<pre>
-				<code class="language-html line-numbers">
-					&lt;!-- Content --&gt;
-					&lt;div class="skills-section"&gt;
-						&lt;div class="grid-item"&gt;
-							&lt;h2&gt;Shaders&lt;/h2&gt;
-							&lt;p&gt;Blah Blah&lt;/p&gt;
+				<code class="language-csharp line-numbers">
+					public void DoMiningLaser(bool keypressed, Vector3 mousepos, Vector3 playerpos)
+					{
+						laser1LineRenderer.enabled = false;
+						laser2LineRenderer.enabled = false;
 					
-						&lt;/div&gt;
-						&lt;div class="grid-item"&gt;&lt;/div&gt;
-						&lt;div class="grid-item"&gt;&lt;/div&gt;
-						&lt;div class="grid-item"&gt;&lt;/div&gt;
-					&lt;/div&gt;
-					&lt;!-- end --&gt;
-					&lt;!-- Content --&gt;
-					&lt;div class="skills-section"&gt;
-					&lt;div class="grid-item"&gt;
-					&lt;h2&gt;Shaders&lt;/h2&gt;
-					&lt;p&gt;Blah Blah&lt;/p&gt;
-					
-					&lt;/div&gt;
-					&lt;div class="grid-item"&gt;&lt;/div&gt;
-					&lt;div class="grid-item"&gt;&lt;/div&gt;
-					&lt;div class="grid-item"&gt;&lt;/div&gt;
-					&lt;/div&gt;
-					&lt;!-- end --&gt;
+						if (keypressed == false)
+						return;
+						
+						RaycastHit2D hit1 = Physics2D.Raycast(	gun1.transform.position,
+																		(transform.position + (mousepos - playerpos) * 0.5f) - gun1.transform.position,
+																		25.0f,
+																		1 << LayerMask.NameToLayer("Asteroids")); 
+						RaycastHit2D hit2 = Physics2D.Raycast(	gun2.transform.position,
+																		(transform.position + (mousepos - playerpos) * 0.5f) - gun2.transform.position, 
+																		25.0f, 
+																		1 << LayerMask.NameToLayer("Asteroids")); 
+						if (hit1.collider !=null) 
+							LaserHit(gun1.transform.position, hit1, ref laser1LineRenderer); 
+						if (hit2.collider !=null) 
+							LaserHit(gun2.transform.position, hit2, ref laser2LineRenderer); 
+							
+						void LaserHit(Vector3 origin, RaycastHit2D hit, ref LineRenderer laserLineRenderer) 
+						{ 
+							if (hit.collider.CompareTag("Asteroid")==false) 
+								return;
+								
+							laserLineRenderer.enabled=true;
+							laserLineRenderer.positionCount=2; 
+							laserLineRenderer.SetPosition(0, origin); 
+							laserLineRenderer.SetPosition(1,hit.point); 
+							
+							ParticleEffects.Instance.SpawnParticles(hit.point, 1, ParticleType.dust);
+							ParticleEffects.Instance.SpawnParticles(hit.point, 1, ParticleType.fire); 
+							
+							Asteroid asteroid = hit.collider.GetComponentInParent&ltAsteroid&gt();
+							asteroid.Melt(0.2f);
+						}
+					}
 				</code>
 			</pre>
 		</div>
 		<div class="image">
-			<img style="background-color: darkgrey;" src="http://i.stack.imgur.com/SBv4T.gif"
-				alt="this slowpoke moves" />
-			<h6>An image of a thing</h6>
+			<img style="background-color: darkgrey;" src="img/player-mining-asteroid.gif"
+				alt="player mining an asteroid in game" />
+			<h6>A player mining an asteroid</h6>
 		</div>
 	</section>
+	<!-- end -->
 
-	<h2 class="subheading">Shaders</h2>
+	<!-- Skills Section -->
+	<h2 class="subheading">Mining Asteroids</h2>
 	<section class="skills-section">
 		<div class="description">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-				dolore magna
-				aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis
-				aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-				Excepteur sint
-				occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p>To create the mining effect I used Unity's line renderer for the laser and object pooling to spawn dust
+				and flame
+				particle effects. Below is the function which controls the rendering of the laser, the spawning of
+				particles, and
+				appling damage to the asteroid.</p>
 			<h6>html</h6>
 			<pre>
-					<code class="language-html line-numbers">
-						&lt;!-- Content --&gt;
-						&lt;div class="skills-section"&gt;
-							&lt;div class="grid-item"&gt;
-								&lt;h2&gt;Shaders&lt;/h2&gt;
-								&lt;p&gt;Blah Blah&lt;/p&gt;
+					<code class="language-csharp line-numbers">
+						public void DoMiningLaser(bool keypressed, Vector3 mousepos, Vector3 playerpos)
+						{
+							laser1LineRenderer.enabled = false;
+							laser2LineRenderer.enabled = false;
 						
-							&lt;/div&gt;
-							&lt;div class="grid-item"&gt;&lt;/div&gt;
-							&lt;div class="grid-item"&gt;&lt;/div&gt;
-							&lt;div class="grid-item"&gt;&lt;/div&gt;
-						&lt;/div&gt;
-						&lt;!-- end --&gt;
-						&lt;!-- Content --&gt;
-						&lt;div class="skills-section"&gt;
-						&lt;div class="grid-item"&gt;
-						&lt;h2&gt;Shaders&lt;/h2&gt;
-						&lt;p&gt;Blah Blah&lt;/p&gt;
-						
-						&lt;/div&gt;
-						&lt;div class="grid-item"&gt;&lt;/div&gt;
-						&lt;div class="grid-item"&gt;&lt;/div&gt;
-						&lt;div class="grid-item"&gt;&lt;/div&gt;
-						&lt;/div&gt;
-						&lt;!-- end --&gt;
+							if (keypressed == false)
+							return;
+							
+							RaycastHit2D hit1 = Physics2D.Raycast(	gun1.transform.position,
+																			(transform.position + (mousepos - playerpos) * 0.5f) - gun1.transform.position,
+																			25.0f,
+																			1 << LayerMask.NameToLayer("Asteroids")); 
+							RaycastHit2D hit2 = Physics2D.Raycast(	gun2.transform.position,
+																			(transform.position + (mousepos - playerpos) * 0.5f) - gun2.transform.position, 
+																			25.0f, 
+																			1 << LayerMask.NameToLayer("Asteroids")); 
+							if (hit1.collider !=null) 
+								LaserHit(gun1.transform.position, hit1, ref laser1LineRenderer); 
+							if (hit2.collider !=null) 
+								LaserHit(gun2.transform.position, hit2, ref laser2LineRenderer); 
+								
+							void LaserHit(Vector3 origin, RaycastHit2D hit, ref LineRenderer laserLineRenderer) 
+							{ 
+								if (hit.collider.CompareTag("Asteroid")==false) 
+									return;
+									
+								laserLineRenderer.enabled=true;
+								laserLineRenderer.positionCount=2; 
+								laserLineRenderer.SetPosition(0, origin); 
+								laserLineRenderer.SetPosition(1,hit.point); 
+								
+								ParticleEffects.Instance.SpawnParticles(hit.point, 1, ParticleType.dust);
+								ParticleEffects.Instance.SpawnParticles(hit.point, 1, ParticleType.fire); 
+								
+								Asteroid asteroid = hit.collider.GetComponentInParent&ltAsteroid&gt();
+								asteroid.Melt(0.2f);
+							}
+						}
 					</code>
 				</pre>
 		</div>
