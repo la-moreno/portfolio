@@ -4,6 +4,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap');
 
+:root {
+  --primary_color: #e78582;
+  --secondary_color: #101319;
+  --font_color: #F0F6F0;
+}
 
 html,
 body {
@@ -21,7 +26,7 @@ body {
   -webkit-font-smoothing: antialiased;
   letter-spacing: .08rem;
   color: #f0f6f0;
-  background-color: #3e415f;
+  background-color: var(--secondary_color);
 }
 
 .hide-scroll::-webkit-scrollbar {

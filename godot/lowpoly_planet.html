@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml' lang='' xml:lang=''>
+
 <head>
 	<meta charset='utf-8' />
 	<meta name='viewport' content='width=device-width, user-scalable=no' />
 	<title>LowPoly Planet</title>
 	<style type='text/css'>
-
 		body {
 			touch-action: none;
 			margin: 0;
 			border: 0 none;
 			padding: 0;
 			text-align: center;
-			background-color: black;
+			background-color: transparent;
 		}
 
 		#canvas {
@@ -85,7 +85,7 @@
 			position: relative;
 		}
 
-		#status-indeterminate > div {
+		#status-indeterminate>div {
 			width: 4.5px;
 			height: 0;
 			border-style: solid;
@@ -95,14 +95,37 @@
 			position: absolute;
 		}
 
-		#status-indeterminate > div:nth-child(1) { transform: rotate( 22.5deg); }
-		#status-indeterminate > div:nth-child(2) { transform: rotate( 67.5deg); }
-		#status-indeterminate > div:nth-child(3) { transform: rotate(112.5deg); }
-		#status-indeterminate > div:nth-child(4) { transform: rotate(157.5deg); }
-		#status-indeterminate > div:nth-child(5) { transform: rotate(202.5deg); }
-		#status-indeterminate > div:nth-child(6) { transform: rotate(247.5deg); }
-		#status-indeterminate > div:nth-child(7) { transform: rotate(292.5deg); }
-		#status-indeterminate > div:nth-child(8) { transform: rotate(337.5deg); }
+		#status-indeterminate>div:nth-child(1) {
+			transform: rotate(22.5deg);
+		}
+
+		#status-indeterminate>div:nth-child(2) {
+			transform: rotate(67.5deg);
+		}
+
+		#status-indeterminate>div:nth-child(3) {
+			transform: rotate(112.5deg);
+		}
+
+		#status-indeterminate>div:nth-child(4) {
+			transform: rotate(157.5deg);
+		}
+
+		#status-indeterminate>div:nth-child(5) {
+			transform: rotate(202.5deg);
+		}
+
+		#status-indeterminate>div:nth-child(6) {
+			transform: rotate(247.5deg);
+		}
+
+		#status-indeterminate>div:nth-child(7) {
+			transform: rotate(292.5deg);
+		}
+
+		#status-indeterminate>div:nth-child(8) {
+			transform: rotate(337.5deg);
+		}
 
 		#status-notice {
 			margin: 0 100px;
@@ -112,17 +135,20 @@
 			visibility: visible;
 		}
 	</style>
-<link id='-gd-engine-icon' rel='icon' type='image/png' href='lowpoly_planet.icon.png' />
-<link rel='apple-touch-icon' href='lowpoly_planet.apple-touch-icon.png'/>
+	<link id='-gd-engine-icon' rel='icon' type='image/png' href='lowpoly_planet.icon.png' />
+	<link rel='apple-touch-icon' href='lowpoly_planet.apple-touch-icon.png' />
 
 </head>
+
 <body>
 	<canvas id='canvas'>
 		HTML5 canvas appears to be unsupported in the current browser.<br />
 		Please try updating or use a different browser.
 	</canvas>
 	<div id='status'>
-		<div id='status-progress' style='display: none;' oncontextmenu='event.preventDefault();'><div id ='status-progress-inner'></div></div>
+		<div id='status-progress' style='display: none;' oncontextmenu='event.preventDefault();'>
+			<div id='status-progress-inner'></div>
+		</div>
 		<div id='status-indeterminate' style='display: none;' oncontextmenu='event.preventDefault();'>
 			<div></div>
 			<div></div>
@@ -139,10 +165,11 @@
 	<script type='text/javascript' src='lowpoly_planet.js'></script>
 	<script type='text/javascript'>//<![CDATA[
 
-		const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"executable":"lowpoly_planet","experimentalVK":false,"fileSizes":{"lowpoly_planet.pck":19836640,"lowpoly_planet.wasm":26059464},"focusCanvas":true,"gdnativeLibs":[]};
+		const GODOT_CONFIG = { "args": [], "canvasResizePolicy": 2, "executable": "lowpoly_planet", "experimentalVK": false, "fileSizes": { "lowpoly_planet.pck": 19837040, "lowpoly_planet.wasm": 26059464 }, "focusCanvas": true, "gdnativeLibs": [] };
 		var engine = new Engine(GODOT_CONFIG);
 
-		(function() {
+		(function ()
+		{
 			const INDETERMINATE_STATUS_STEP_MS = 100;
 			var statusProgress = document.getElementById('status-progress');
 			var statusProgressInner = document.getElementById('status-progress-inner');
@@ -153,23 +180,28 @@
 			var statusMode = 'hidden';
 
 			var animationCallbacks = [];
-			function animate(time) {
+			function animate(time)
+			{
 				animationCallbacks.forEach(callback => callback(time));
 				requestAnimationFrame(animate);
 			}
 			requestAnimationFrame(animate);
 
-			function setStatusMode(mode) {
+			function setStatusMode(mode)
+			{
 
 				if (statusMode === mode || !initializing)
 					return;
-				[statusProgress, statusIndeterminate, statusNotice].forEach(elem => {
+				[statusProgress, statusIndeterminate, statusNotice].forEach(elem =>
+				{
 					elem.style.display = 'none';
 				});
-				animationCallbacks = animationCallbacks.filter(function(value) {
+				animationCallbacks = animationCallbacks.filter(function (value)
+				{
 					return (value != animateStatusIndeterminate);
 				});
-				switch (mode) {
+				switch (mode)
+				{
 					case 'progress':
 						statusProgress.style.display = 'block';
 						break;
@@ -188,28 +220,35 @@
 				statusMode = mode;
 			}
 
-			function animateStatusIndeterminate(ms) {
+			function animateStatusIndeterminate(ms)
+			{
 				var i = Math.floor(ms / INDETERMINATE_STATUS_STEP_MS % 8);
-				if (statusIndeterminate.children[i].style.borderTopColor == '') {
-					Array.prototype.slice.call(statusIndeterminate.children).forEach(child => {
+				if (statusIndeterminate.children[i].style.borderTopColor == '')
+				{
+					Array.prototype.slice.call(statusIndeterminate.children).forEach(child =>
+					{
 						child.style.borderTopColor = '';
 					});
 					statusIndeterminate.children[i].style.borderTopColor = '#dfdfdf';
 				}
 			}
 
-			function setStatusNotice(text) {
-				while (statusNotice.lastChild) {
+			function setStatusNotice(text)
+			{
+				while (statusNotice.lastChild)
+				{
 					statusNotice.removeChild(statusNotice.lastChild);
 				}
 				var lines = text.split('\n');
-				lines.forEach((line) => {
+				lines.forEach((line) =>
+				{
 					statusNotice.appendChild(document.createTextNode(line));
 					statusNotice.appendChild(document.createElement('br'));
 				});
 			};
 
-			function displayFailureNotice(err) {
+			function displayFailureNotice(err)
+			{
 				var msg = err.message || err;
 				console.error(msg);
 				setStatusNotice(msg);
@@ -217,32 +256,40 @@
 				initializing = false;
 			};
 
-			if (!Engine.isWebGLAvailable()) {
+			if (!Engine.isWebGLAvailable())
+			{
 				displayFailureNotice('WebGL not available');
-			} else {
+			} else
+			{
 				setStatusMode('indeterminate');
 				engine.startGame({
-					'onProgress': function (current, total) {
-						if (total > 0) {
-							statusProgressInner.style.width = current/total * 100 + '%';
+					'onProgress': function (current, total)
+					{
+						if (total > 0)
+						{
+							statusProgressInner.style.width = current / total * 100 + '%';
 							setStatusMode('progress');
-							if (current === total) {
+							if (current === total)
+							{
 								// wait for progress bar animation
-								setTimeout(() => {
+								setTimeout(() =>
+								{
 									setStatusMode('indeterminate');
 								}, 500);
 							}
-						} else {
+						} else
+						{
 							setStatusMode('indeterminate');
 						}
 					},
-				}).then(() => {
+				}).then(() =>
+				{
 					setStatusMode('hidden');
 					initializing = false;
 				}, displayFailureNotice);
 			}
 		})();
-	//]]></script>
+		//]]></script>
 </body>
-</html>
 
+</html>

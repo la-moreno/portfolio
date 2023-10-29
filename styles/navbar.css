@@ -1,3 +1,9 @@
+:root {
+  --primary_color: #e78582;
+  --secondary_color: #121716;
+  --font_color: #F0F6F0;
+}
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -8,7 +14,7 @@
   margin: 0;
   padding: 0 1.5rem 0 1.5rem;
   list-style-type: none;
-  background-color: #3e415f;
+  background-color: var(--secondary_color);
   transition: all .15s;
 }
 
@@ -26,26 +32,26 @@
   font-size: medium;
   font-weight: 800;
   margin: .35rem .2rem .35rem .2rem;
-  padding: .2rem .8rem .2rem .8rem;
-  color: #F0F6F0;
+  padding: 0rem .8rem;
+  color: var(--font_color);
   transition: all .15s;
 }
 
 .navbar ul li a:hover {
   font-size: large;
-  color: #e78582;
+  color: var(--primary_color);
 }
 
 .navbar li a img {
-  color: #F0F6F0;
+  color: var(--font_color);
   display: block;
   height: 25px;
 }
 
 .active a {
-  color: #f0f6f0 !important;
+  color: var(--secondary_color) !important;
   border-radius: 20px;
-  background-color: #e78582;
+  background-color: var(--font_color);
 }
 
 @media (max-width: 768px) {
