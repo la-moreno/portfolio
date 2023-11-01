@@ -4,7 +4,21 @@
     position: relative;
     height: 80vh;
     width: 100vw;
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+}
+
+.home-banner {
+    display: grid;
+    gap: 1em;
+}
+
+@media (min-width: 350em) {
+    .home-banner {
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
 }
 
 .home-banner div {
@@ -12,16 +26,16 @@
 }
 
 .home-banner iframe {
-    top: 20px;
+    padding-right: 70em;
+    position: inherit;
     z-index: -10;
 }
 
 .home-greeting {
+    padding-left: 7em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
-    width: 100%;
     text-align: center;
     z-index: 20;
 }
