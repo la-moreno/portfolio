@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="styles/wrapper.css" />
 	<link rel="stylesheet" href="styles/home-page.css" />
 	<link rel="stylesheet" href="styles/banner.css" />
+	<link rel="stylesheet" href="styles/loading.css" />
 	<link rel="stylesheet" href="prism/prism.css">
 
 	<script src="prism/prism.js"></script>
@@ -20,6 +21,8 @@
 </head>
 
 <body class="hide-scroll">
+
+
 	<!-- Navbar -->
 	<div class="navbar">
 		<li><a><img src="svg/la-logo-white.svg" alt="logo" /></a></li>
@@ -65,6 +68,18 @@
 
 	<script src="js/fade-on-scroll.js"></script>
 	<script src="https://kit.fontawesome.com/c97ec5cecd.js" crossorigin="anonymous"></script>
+
+	<div class="loader-wrapper">
+		<span class="loader"><span class="loader-inner"></span></span>
+	</div>
+
+	<script>
+		$(window).on("load", function ()
+		{
+			$(".loader-wrapper").fadeOut("slow");
+		})
+	</script>
+
 </body>
 
 </html>
